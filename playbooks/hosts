@@ -20,3 +20,4 @@ zf anisble_host=192.168.233.85
 [alma]
 sm ansible_host=192.168.233.83
 xm anisble_host=192.168.233.82
+
