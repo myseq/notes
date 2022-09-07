@@ -1,0 +1,22 @@
+[all:vars]
+ansible_user=xx
+ansible_port=22
+ansible_become_method=sudo
+ansible_python_interpreter=/usr/bin/python3
+
+[vm]
+#xx ansible_host=192.168.233.254
+jt ansible_host=192.168.233.81
+xm anisble_host=192.168.233.82
+sm ansible_host=192.168.233.83
+pf ansible_host=192.168.233.84
+zf anisble_host=192.168.233.85
+
+[ubuntu]
+jt ansible_host=192.168.233.81
+pf ansible_host=192.168.233.84
+zf anisble_host=192.168.233.85
+
+[alma]
+sm ansible_host=192.168.233.83
+xm anisble_host=192.168.233.82
