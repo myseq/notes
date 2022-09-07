@@ -1,6 +1,11 @@
 # IPv6 #
 https://www.youtube.com/watch?v=oItwDXraK1M
 
+## Setup
+```console
+$ sudo apt install ipcalc ipv6calc
+```
+
 ### Address length and format ###
 - IPv6 uses **128 bits** or **(16 bytes)** 
 - IPv6 is written in **8 groups of 2 bytes** in hex and separated by colon :
