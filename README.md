@@ -7,5 +7,5 @@ This repository contains:
 - Technologies cheat sheets
 - etc
 
-# Use at your own Risk ;-)
+## Use at your own Risk ;-)
 I am sharing the information here as-is, for free, but use at your own risk ;-)
