@@ -1,5 +1,5 @@
 # Notes (cheat sheets)
-As of Sept 2022, I start this repository to keep my notes and some cheat sheets that I constantly collecting. 
+As of Sept 2022, I start this repository to keep my notes and cheat sheets that I constantly collecting. 
 
 This repository contains:
 - Ansible playbooks
