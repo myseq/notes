@@ -15,3 +15,14 @@ $ ansible linux -a "cat /etc/os-release"
 ```bash
 $ ansible-playbook df.yml
 ```
+Content of the sample yaml file
+```yml
+---
+  - name: vim_play
+    hosts: ubuntu
+    tasks:
+      - name: ensure vim is latest
+        apt: 
+          name: vim
+          state: latest
+```
