@@ -13,6 +13,19 @@ PATH="$PATH:/home/user/snap/multipass/common/bin"
 PS> set PATH="%PATH%:C:\Users\<user>\AppData\Local\Multipass\bin”
 ```
 
+## Multipass VM Instance (default)
+- 1 CPU
+- 1GB RAM
+- 5GB disk
+```powershell
+PS> multipass launch -n primary --cpus 1 --mem 1G --disk 5G
+```
+To create a custom VM instance
+```powershell
+PS> multipass launch -n jimny --cpus 2 --mem 2G --disk 8G
+```
+
+
 ## Multipass Settings
 ```cmd
 PS> multipass get --keys
