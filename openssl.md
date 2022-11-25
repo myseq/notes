@@ -69,7 +69,7 @@ $ openssl x509 -noout -fingerprint -sha256 -inform PEM -in www.google.com.pem
 sha256 Fingerprint=EB:45:33:D6:01:18:E6:D2:09:50:B8:AE:22:84:2E:51:75:0E:1D:26:3A:60:8B:B3:98:02:13:65:95:95:77:9C
 ```
 
-## 4. Encryption and decryption
+## 4. Encryption and Decryption
 To get a list of available ciphers.
 ```console
 $ openssl list -cipher-commands
