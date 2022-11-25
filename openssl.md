@@ -1,7 +1,7 @@
 # Reference of most commonly used OpenSSL commands
 1. Create certificate
 2. Verify certs and keys
-3. Hash
+3. Hash and fingerprint
 4. Encryption and decryption
 5. Debugging
 
@@ -37,11 +37,15 @@ Check on the certificate revocation list (CRL).
 $ openssl crl -text -noout -in file.pem
 ```
 
-## 3. Hash
+## 3. Hash and Fingerprint
 Generate MD5 hash from stdin, or file.
 ```console
+$ echo -n "Hello World" | openssl dgst -md5
+MD5(stdin)= b10a8db164e0754105b7a99be72e3fe5
 $ echo -n "Hello World" | openssl md5
+MD5(stdin)= b10a8db164e0754105b7a99be72e3fe5
 $ openssl sha1 file.csr
+SHA1(file.csr)= 15d0df9d69683fbe232fbf2d2c5a3873763d339c
 ```
 
 |      | Hash Algorithm | Description      |
@@ -57,11 +61,57 @@ $ openssl sha1 file.csr
 | 9    | sha512     |  |  
 | 10   | whirpool     |  |  
 
+To retrieve the fingerprint of a certificate.
+```console
+$ openssl x509 -noout -fingerprint -sha256 -inform der -in www.google.com.crt
+sha256 Fingerprint=EB:45:33:D6:01:18:E6:D2:09:50:B8:AE:22:84:2E:51:75:0E:1D:26:3A:60:8B:B3:98:02:13:65:95:95:77:9C
+$ openssl x509 -noout -fingerprint -sha256 -inform PEM -in www.google.com.pem
+sha256 Fingerprint=EB:45:33:D6:01:18:E6:D2:09:50:B8:AE:22:84:2E:51:75:0E:1D:26:3A:60:8B:B3:98:02:13:65:95:95:77:9C
+```
 
 ## 4. Encryption and decryption
+To get a list of available ciphers.
+```console
+$ openssl list -cipher-commands
+```
 
+General used on encrypting a file.
+``` openssl aes-256-cbc [-a] -in INPUT_FILE -out ENCRYPTED_FILE [-pass KEY:VALUE]```
+
+To encrypt a file.
+```console
+$ openssl enc -aes-256-cbc -in plain.txt -out file.enc
+```
+
+To encrypt a file with password file.
+```console
+$ openssl aes-256-cbs -in plain.txt -out file.enc -pass file:password.txt
+```
+
+General used on decrypting a file.
+``` openssl aes-256-cbc -d [-a] -in ENCRYPTED_FILE -out OUTPUT_FILE [-pass KEY:VALUE] [-md md5]```
+
+Tp decrypt a file with specified password.
+```console
+$ openssl aes-256-cbc -d -in file.enc -out decrypted.txt -pass pass:mySuperSecretPassword
+```
+
+To decrypt an encrypted file and generate Base64 encoded output
+```console
+$ openssl aes-256-cbc -d -a -in file.enc -out decrypted.txt 
+```
 
 ## 5. Debugging
+To download a certificate from a web site.
+```console
+$ echo "Q" | openssl s_client -connect www.google.com:443 -showcerts | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > www.google.com.pem
+```
+
+To convert a certificate from PEM format to DER format.
+```console
+$ openssl x509 -inform PEM -in www.google.com.pem -outform DER -out www.google.com.crt
+```
+
 Test a connection, certificate chain, protocol and cipher negotiation.
 ```console
 $ openssl s_client -connect hostname:port
