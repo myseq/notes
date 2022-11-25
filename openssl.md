@@ -121,3 +121,18 @@ To test a connection within script.
 ```console
 $ echo "Q" | openssl s_client -connect www.google.com:443
 ```
+
+To get version info.
+```console
+$ openssl version -a                                                                                                                                 130 ⨯
+OpenSSL 3.0.2 15 Mar 2022 (Library: OpenSSL 3.0.2 15 Mar 2022)
+built on: Thu Oct 27 17:06:56 2022 UTC
+platform: debian-amd64
+options:  bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -ffile-prefix-map=/build/openssl-WsPfAX/openssl-3.0.2=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
+OPENSSLDIR: "/usr/lib/ssl"
+ENGINESDIR: "/usr/lib/x86_64-linux-gnu/engines-3"
+MODULESDIR: "/usr/lib/x86_64-linux-gnu/ossl-modules"
+Seeding source: os-specific
+CPUINFO: OPENSSL_ia32cap=0xfffa32235f8bffff:0x184007a4219c27ab
+```
