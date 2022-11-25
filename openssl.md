@@ -5,7 +5,7 @@
 4. Encryption and decryption
 5. Debugging
 
-## 1. Create Certificate
+## 1. Create Certificate {#1}
 Generate a private 4096-bit RSA key.
 ```console
 $ openssl genrsa -out private.key 4096
