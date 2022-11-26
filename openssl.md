@@ -163,3 +163,5 @@ MODULESDIR: "/usr/lib/x86_64-linux-gnu/ossl-modules"
 Seeding source: os-specific
 CPUINFO: OPENSSL_ia32cap=0xfffa32235f8bffff:0x184007a4219c27ab
 ```
+
+[Back to Top](#reference-of-most-commonly-used-openssl-commands)
