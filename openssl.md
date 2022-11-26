@@ -57,6 +57,12 @@ $ openssl crl -text -noout -in file.pem
 ```
 
 ## 3. Hash and Fingerprint
+To get a list of available digest/hashing algorithms.
+```console
+$ openssl list -digest-commands
+$ openssl list -digest-algorithms
+```
+
 Generate MD5 hash from stdin, or file.
 ```console
 $ echo -n "Hello World" | openssl dgst -md5
