@@ -30,7 +30,6 @@ pie
         'primaryBorderColor': '#78e2a0',
         'secondaryColor': '#78e2a0',
         'primaryBorderColor': '#ffbf00',
-        'fontFamily': 'Verdana, Arial, Sans-Serif',
         'darkMode': 'true' }}}%%
 pie showData
     title Dark | Custom
