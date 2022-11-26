@@ -1,6 +1,6 @@
 # Reference of most commonly used OpenSSL commands
 1. [Create certificate](#create-certificate)
-2. [Verify certs and keys](#verify-certs-and-keys)
+2. [Verify certs and keys](#2-verify-certs-and-keys)
 3. Hash and fingerprint
 4. Encryption and decryption
 5. Debugging
