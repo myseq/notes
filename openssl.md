@@ -1,6 +1,6 @@
 # Reference of most commonly used OpenSSL commands
 1. [Create certificate](#create-certificate)
-2. Verify certs and keys
+2. [Verify certs and keys](#verify-certs-and-keys)
 3. Hash and fingerprint
 4. Encryption and decryption
 5. Debugging
@@ -35,7 +35,7 @@ mwIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-## 2. Verify Certs and Keys
+## 2. [Verify Certs and Keys]
 Check on a certificate file.
 ```console
 $ openssl x509 -text -noout -in file.crt
