@@ -17,8 +17,8 @@
         'darkMode': 'true' }}}%%
 pie
     title Dark | Base
-    "Movies" : 80
-    "TV shows" : 20
+    "Movies" : 20
+    "TV shows" : 80
 ```
 
 ### Dark Custom Theme
