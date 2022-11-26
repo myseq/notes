@@ -73,18 +73,16 @@ $ openssl sha1 file.csr
 SHA1(file.csr)= 15d0df9d69683fbe232fbf2d2c5a3873763d339c
 ```
 
-|      | Hash Algorithm | Description      |
-| ---: | :------- | :--------------- |
-| 1    | md4  |  |
-| 2    | md5    |  |
-| 3    | mdc2    |  |
-| 4    | ripemd160  |   |
-| 5    | sha  |  |  
-| 6    | sha1     |  |  
-| 7    | sha256     |  |  
-| 8    | sha384     |  |  
-| 9    | sha512     |  |  
-| 10   | whirpool     |  |  
+| | MD5 | SHA-1 | SHA-2 (224 & 256/384 & 512) | SHA-3 (224/256/384/512) |
+| :- | :- | :- | :- | :- |
+| Block Size | 512 bits | 512 bits | 512/1024 bits | |
+| Hash Digest output size (bits) | 128 bits  | 160 bits  | 256/512 bits | 224/256/384/512 bits |
+| Hash Digest output size (bytes) | 16 bytes  | 20 bytes | 32/64 bytes | 28/32/48/64 bytes |
+| Hash Digest output size (hex) | 32 hex digits  | 40 hex digits  | 64/128 hex digits | 56/64/96/128 hex digits |
+| Collision Level | High | Cheap | Low | Low |
+| Security Level | Low | Low | High | High |
+| Deprecated | Yes | Yes | No | No |
+| Use Cases | Verifying file integrity | Used for HMAC and verifying file integrity | Widely used in TLS, SSL, PGP, SSH, IPsec, crypto validation, digital certification | Used to replace SHA-2 | 
 
 To retrieve the fingerprint of a certificate.
 ```console
@@ -147,6 +145,31 @@ To test a connection within script.
 ```console
 $ echo "Q" | openssl s_client -connect www.google.com:443
 $ echo "Q" | openssl s_client -connect www.google.com:443 -showcerts
+```
+
+To measure the efficiency of cryptography algorithm by comparing RSA 2048-bit and 4096-bit.
+```console
+$ openssl speed rsa2048
+Doing 2048 bits private rsa's for 10s: 23603 2048 bits private RSA's in 10.00s
+Doing 2048 bits public rsa's for 10s: 770334 2048 bits public RSA's in 10.00s
+version: 3.0.2
+built on: Thu Oct 27 17:06:56 2022 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -ffile-prefix-map=/build/openssl-WsPfAX/openssl-3.0.2=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
+CPUINFO: OPENSSL_ia32cap=0xfffa32235f8bffff:0x184007a4219c27ab
+                  sign    verify    sign/s verify/s
+rsa 2048 bits 0.000424s 0.000013s   2360.3  77033.4
+
+$ openssl speed rsa4096
+Doing 4096 bits private rsa's for 10s: 3270 4096 bits private RSA's in 10.00s
+Doing 4096 bits public rsa's for 10s: 209997 4096 bits public RSA's in 10.00s
+version: 3.0.2
+built on: Thu Oct 27 17:06:56 2022 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -ffile-prefix-map=/build/openssl-WsPfAX/openssl-3.0.2=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
+CPUINFO: OPENSSL_ia32cap=0xfffa32235f8bffff:0x184007a4219c27ab
+                  sign    verify    sign/s verify/s
+rsa 4096 bits 0.003058s 0.000048s    327.0  20999.7
 ```
 
 To get version info.
