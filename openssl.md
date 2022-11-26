@@ -16,6 +16,25 @@ Generate a signing request (CSR) with SHA256 signature and valid for 1 year.
 $ openssl req -new -key private.key -days 365 -sha256 -out file.csr
 ```
 
+Generate an RSA private key with default parameters.
+```console
+$ openssl genpkey -algorithm RSA -out private_key.pem
+```
+
+Then, to extract the pair's public key from the private key.
+```console
+$ openssl rsa -in private_key.pem -outform PEM -pubout -out public_key.pem
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1JHyxBl5XibQ/lyB4Di7
+XLERG1AOeiwAwZVpvW85qOhvcV1AdKpcqcy9Qh86ysmgG7JwEmCMIIF8uGv2hN1d
+HsoACwhRU3aquX00UPDXz49YyImfOZVaLeNiACQ58KuJYAF6CdTVF9e87nuMF+Yx
+wlmHae4cCvAHDtSFt4JEf5veTQPhgRDmlKVw59ci41yxfzUAS5VQph1R6nX3qvYe
+BhTrr5gLBJ7y0dTT3GI2Gb4F1AWB6gjehDgiRBLpGNbNXsX363COlcIVDJhb1tHd
+1D2y1vD0C4yr6RdbV5ws5YcaL6vIlwJmPOWUSfe0bBuuvhOOU2t+bn5zJxrLen4N
+mwIDAQAB
+-----END PUBLIC KEY-----
+```
+
 ## 2. Verify Certs and Keys
 Check on a certificate file.
 ```console
@@ -73,6 +92,7 @@ sha256 Fingerprint=EB:45:33:D6:01:18:E6:D2:09:50:B8:AE:22:84:2E:51:75:0E:1D:26:3
 To get a list of available ciphers.
 ```console
 $ openssl list -cipher-commands
+$ openssl list -cipher-algorithms
 ```
 
 General used on encrypting a file.
@@ -120,6 +140,7 @@ $ openssl s_client -connect hostname:port
 To test a connection within script.
 ```console
 $ echo "Q" | openssl s_client -connect www.google.com:443
+$ echo "Q" | openssl s_client -connect www.google.com:443 -showcerts
 ```
 
 To get version info.
