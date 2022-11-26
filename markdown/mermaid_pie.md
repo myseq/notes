@@ -9,7 +9,7 @@
 | `neutral` |  The theme to be used for black and white printing. |
 
 
-### Dark Base Theme
+### DarkMode Base Theme
 ```mermaid
 %%{init: {
     'theme': 'base',
@@ -21,7 +21,7 @@ pie
     "TV shows" : 80
 ```
 
-### Dark Custom Theme
+### DarkMode Custom Theme
 ```mermaid
 %%{init: {
     'theme': 'base',
