@@ -1,11 +1,11 @@
 # Reference of most commonly used OpenSSL commands
-1. Create certificate
+1. [Create certificate](#create-certificate)
 2. Verify certs and keys
 3. Hash and fingerprint
 4. Encryption and decryption
 5. Debugging
 
-## 1. Create Certificate {#1}
+## 1. [Create Certificate]
 Generate a private 4096-bit RSA key.
 ```console
 $ openssl genrsa -out private.key 4096
