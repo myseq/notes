@@ -35,7 +35,7 @@ mwIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-## 2. [Verify Certs and Keys]
+## 2. Verify Certs and Keys
 Check on a certificate file.
 ```console
 $ openssl x509 -text -noout -in file.crt
