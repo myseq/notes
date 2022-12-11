@@ -1,7 +1,7 @@
 # Python Dict()
 Some of my quick notes on using Python Dict()
 
-### To get key by valu in Dict()
+### To get key by value in Dict()
 ```python
 print( [ k for k,v in a.items() if v==b ] )
 ```
