@@ -8,9 +8,10 @@ There are 4 main types of data structures in Python:
 ### Examples
 ```python
 # main data structure
-list_ppl = ["Jim", "Jack", "Jane", "Jill"]
-dist_ppl = {3: "Jim", 2: "Jack", 4: "Jane", 1: "Jill"}
-tuple_ppl = (3, "Jim")
+ppl_list = ["Jim", "Jack", "Jane", "Jill"]
+ppl_dist = {3: "Jim", 2: "Jack", 4: "Jane", 1: "Jill"}
+ppl_tuple = (  'apple', 'banana', 'cherry'  )
+ppl_set = { 'apple', 'banana', 'cherry' }
 
 # mix of data structure
 list_dict_ppl = [  
