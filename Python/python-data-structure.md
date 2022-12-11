@@ -18,6 +18,11 @@ list_dict_ppl = [
    {"id": 2, "name": "Jack"}, 
    {"id": 4, "name": "Jane"},  
    {"id": 1, "name": "Jill"}   ]
-list_tuple_ppl = [ (3, "Jim"),  (2, "Jack"), (4, "Jane"), (1, "Jill")  ]
+   
+list_tuple_ppl = [ 
+    (3, "Jim"),  
+    (2, "Jack"), 
+    (4, "Jane"), 
+    (1, "Jill")    ]
 
 ```
