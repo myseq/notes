@@ -1,9 +1,10 @@
 # Types of Data Structure
 There are 4 main types of data structures in Python:
-1. List
-2. Dictionary
-3. Tuple
-4. Set
+1. List - ordered, changeable, allow-duplicate
+2. Dictionary - unordered, changeable, index, no-dup
+3. Tuple - ordered, unchangeable, allow-duplicate
+4. Set - unordered, unindexed, no-dup
+
 
 ### Examples
 ```python
