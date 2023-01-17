@@ -109,12 +109,20 @@ Counter({'apple': 2, 'banana': 2, 'cherry': 2})
 
 ### Use the any() and all() functions
 ```python 
-
+>>> numbers = [1, 2, 3, 4, 5]
+>>> result = any(number % 2 == 0 for number in numbers)
+>>> print(result)
+True
+>>> result = all(number % 2 == 0 for number in numbers)
+>>> result
+False
+>>>
 ```
-
 
 ### Use fo with statement
 ```python
-
+with open("file.txt") as f:
+    data = f.read()
+    
 ```
 
