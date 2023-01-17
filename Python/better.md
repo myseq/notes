@@ -75,5 +75,46 @@ line2
 line3
 ```
 
+### Use of list comprehension
+```python
+>>> numbers = [1, 2, 3, 4, 5]
+>>> result = [number for number in numbers if number % 2 == 0]
+>>> result
+[2, 4]
+>>>
+```
 
+### Use Counter class to count
+```python
+>>> from collections import Counter
+>>> words = ["apple", "banana", "cherry", "apple", "banana", "cherry"]
+>>> counts = Counter(words)
+>>> print(counts)
+Counter({'apple': 2, 'banana': 2, 'cherry': 2})
+```
+
+### Use enumerate() to keep track of current index
+```python
+>>> numbers = [1, 2, 3, 4, 5]
+>>> for i, number in enumerate(numbers):
+...     print(i, number)
+...
+0 1
+1 2
+2 3
+3 4
+4 5
+>>>
+```
+
+### Use the any() and all() functions
+```python 
+
+```
+
+
+### Use fo with statement
+```python
+
+```
 
