@@ -126,3 +126,20 @@ with open("file.txt") as f:
     
 ```
 
+### Use of try-except-else-finally 
+```python
+>>> a, b = 1,0
+>>>
+>>> try:
+...     print(a/b)
+... except ZeroDivisionError:
+...     print('division by zero')
+... else:
+...     print('no exception raised')
+... finally:
+...     print('Run this always')
+...
+division by zero
+Run this always
+
+```
