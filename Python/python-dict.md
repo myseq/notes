@@ -39,3 +39,15 @@ print(list(mydict.keys())[list(mydict.values()).index(16)])
 >>> dict(sorted(people.items(), key=lambda item: item[1]))
 {2: 'Jack', 4: 'Jane', 1: 'Jill', 3: 'Jim'}
 ```
+
+### Merging 2 Dictionaries
+```python
+>>> dict1 = { 'apple': 8, 'banana': 4 }
+>>> dict2 = { 'banana': 6, 'orange': 3 }
+>>> dict3 = { **dict1, **dict2 }
+>>> dict3
+{'apple': 8, 'banana': 6, 'orange': 3}
+>>>
+```
+
+
