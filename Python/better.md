@@ -119,7 +119,7 @@ False
 >>>
 ```
 
-### Use fo with statement
+### Use of with statement
 ```python
 with open("file.txt") as f:
     data = f.read()
