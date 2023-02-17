@@ -100,3 +100,11 @@ print(names)
 $ python -m http.server
 ```
 
+### Count of list item in another list
+```python
+>>> list1 = [ 3, 4, 7 ]
+>>> list2 = [ 1, 2, 3, 4, 5, 6, 7, 4, 5, 6, 7 ]
+>>> sum(x in list1 for x in list2)
+5
+>>>
+```
