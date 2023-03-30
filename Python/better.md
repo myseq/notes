@@ -1,4 +1,4 @@
-# Tips for BETTER Python
+# Notes for BETTER Python
 
 ### Use built-in function instead of using for-loop)
 ```python
