@@ -1,7 +1,7 @@
 # Notes for BETTER Python
-- Using "any" and "all" in Python https://www.pythonmorsels.com/any-and-all/
-- Built-in Functions in Python https://www.pythonmorsels.com/built-in-functions-in-python/
-- How to write a generator expression https://www.pythonmorsels.com/how-write-generator-expression/
+- [Using "any" and "all" in Python](https://www.pythonmorsels.com/any-and-all/)
+- [Built-in Functions in Python](https://www.pythonmorsels.com/built-in-functions-in-python/)
+- [How to write a generator expression](https://www.pythonmorsels.com/how-write-generator-expression/)
 
 ### Use built-in function instead of using for-loop)
 ```python
