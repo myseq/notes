@@ -7,7 +7,7 @@
 100
 ```
 
-### Use enumerate to print index
+### Use enumerate() to print index
 ```python
 >>> num = [10,20,30,40]
 >>> for i,v in enumerate(num, start=1):
@@ -91,20 +91,6 @@ line3
 >>> counts = Counter(words)
 >>> print(counts)
 Counter({'apple': 2, 'banana': 2, 'cherry': 2})
-```
-
-### Use enumerate() to keep track of current index
-```python
->>> numbers = [1, 2, 3, 4, 5]
->>> for i, number in enumerate(numbers):
-...     print(i, number)
-...
-0 1
-1 2
-2 3
-3 4
-4 5
->>>
 ```
 
 ### Use the any() and all() functions
