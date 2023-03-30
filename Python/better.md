@@ -143,5 +143,27 @@ Same, these two statements are equivalent as well:
 ```
 
 ```python
-ffff
+>>> numbers = [2, 1, 3, 4, 7, 11]
+>>> has_five = any(n == 5 for n in numbers)
+>>>
+>>> numbers = [2, 1, 3, 4, 7, 11]
+>>> has_five = 5 in numbers
+>>> 
+```
+```python
+>>> alist = [ 2, 4, 6, 8 ]
+>>> blist = [ 2, 4, 6, 9 ]
+>>>
+>>> all_even = all( (n % 2) == 0 for n in alist )
+>>> all_even
+True
+>>> all_even = all( (n % 2) == 0 for n in blist )
+>>> all_even
+False
+>>> any_odd = any( (n % 2) == 1 for n in alist )
+>>> any_odd
+False
+>>> any_odd = any( (n % 2) == 1 for n in blist )
+>>> any_odd
+True
 ```
