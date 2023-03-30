@@ -129,3 +129,19 @@ division by zero
 Run this always
 >>> 
 ```
+
+### Use of any(), all(), containment check
+The  two statements are equivalent in Python:
+```python
+>>> all_match = all(condition(x) for x in iterable)
+>>> all_match = not any(not condition(x) for x in iterable)
+```
+Same, these two statements are equivalent as well:
+```python
+>>> any_match = any(condition(x) for x in iterable)
+>>> any_match = not all(not condition(x) for x in iterable)
+```
+
+```python
+ffff
+```
