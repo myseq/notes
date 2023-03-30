@@ -170,3 +170,15 @@ False
 >>> any_odd
 True
 ```
+
+### Print the Title
+```python
+>>> text = 'Title '
+>>> print(f'{text:*<20}')
+Title **************
+>>> print(f'{text:=>20}')
+==============Title
+>>> print(f'{text:.^20}')
+.......Title .......
+>>>
+```
