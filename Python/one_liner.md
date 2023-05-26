@@ -108,3 +108,8 @@ $ python -m http.server
 5
 >>>
 ```
+### Hello World (easter egg)
+```console
+$ python -m __hello__ '__hello__.main()'
+```
+
