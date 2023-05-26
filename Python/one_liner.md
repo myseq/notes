@@ -111,5 +111,7 @@ $ python -m http.server
 ### Hello World (easter egg)
 ```console
 $ python -m __hello__ '__hello__.main()'
+Hello world!
+
 ```
 
