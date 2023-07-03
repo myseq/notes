@@ -17,9 +17,12 @@ Contrary to a global environment, virtual environments are isolated coding space
 ~/app1/ $ git init
 ~/app1/ $ echo envs > .gitignore  
 ~/app1/ $ source envs/bin/activate
-~/app1/ $ pip3 install django 
+~/app1/ $ pip3 install django
+~/app1/ $ vim main.py
 ~/app1/ $ pip3 freeze > requirements.txt  
 ~/app1/ $ git add requirements.txt
+~/app1/ $ git add .
+~/app1/ $ git push
 ~/app1/ $ deactivate
 ```
-  
+ 
