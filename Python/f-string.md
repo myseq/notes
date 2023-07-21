@@ -1,4 +1,7 @@
+## print-f-string.py
 
+
+```python
 from rich import print
 from datetime import datetime
 
@@ -39,3 +42,20 @@ print(f'')
 print("  '%%s loves %%s'%% ('cats','dogs')      |  %s loves %s" % ('cats', 'dogs'))
 print("  '{{}} hates {{}}'.format('cats','dogs') |  {} hates {}".format('cats', 'dogs'))
 print(f'')
+
+now = datetime.now()
+today = datetime.today()
+utcnow = datetime.utcnow()
+print(f'  {{now:%Y-%m-%d %H:%M}}                |  now()    = {now:%Y-%m-%d %H:%M}')
+print(f'  {{today:%Y-%m-%d %H:%M}}              |  today()  = {today:%Y-%m-%d %H:%M}')
+print(f'  {{utcnow:%Y-%m-%d %H:%M}}             |  utcnow() = {utcnow:%Y-%m-%d %H:%M}')
+print(f'')
+
+## defining formats
+email_f = '  "Your email address is {email}"'.format
+email_address = '_user@example.com_'
+print(f'  email_f = "Your email address is {{email}}".format')
+print(f'  email_address = "{email_address}"')
+print(email_f(email=email_address))
+print(f'')
+```
