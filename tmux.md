@@ -1,6 +1,6 @@
 # My tmux setup/config
 
-## tmux key-binding
+## My tmux key-binding
 
 | Description | key-binding |
 | :-- | :-- |
@@ -9,7 +9,7 @@
 | horizontal pane | prefix + % |
 | detach | prefix + d |
 
-## tmux commands 
+## Common tmux commands 
 
 `tmux new -s session_name`- start a new session named session_name.
 
