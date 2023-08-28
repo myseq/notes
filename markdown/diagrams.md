@@ -24,20 +24,32 @@ graph LR
 
 ```mermaid
 graph TD
-    client[client:8080]
-    firewall{{firewall}}
-    ssh_svr["ssh_server:22
+    cli_1[client:8080]
+    cli_2[client:9090]
+    fw1{{firewall_1}}
+    fw2{{firewall_2}}
+    sshd1["ssh_server1:22
              target_server:8080"]
-    
+    sshd2["ssh_server2:22"]
+    web2["web2:9090"]
+
     subgraph local[Home]
-    client -.-> |dport:8080| client
-    end
-    
-    subgraph remote[Datacenter]
-    client === firewall ==> |dport:22| ssh_svr
-    ssh_svr -.-> |dport:8080| ssh_svr
+    cli_1 -.-> |dport:8080| cli_1
     end
 
+    subgraph local[Home]
+    * -.-> |dport:9090| cli_2
+    end
+     
+    subgraph remote[Datacenter]
+    cli_2 === |22/tcp| fw2 ==> |dport:22| sshd2
+    sshd2 -.-> |dport:9090| web2
+    end
+
+    subgraph remote[Datacenter]
+    cli_1 === |22/tcp| fw1 ==> |dport:22| sshd1
+    sshd1 -.-> |dport:8080| sshd1
+    end
 ```
 
 
