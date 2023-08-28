@@ -22,3 +22,14 @@ graph LR
     C -- 8080/tcp --> D[target_svr]
 
 ```
+
+
+## SSH Local Port Forwarding
+
+SSH local port forwarding allows you to securely access a service running on a remote server through an encrypted SSH tunnel.
+
+```mermaid
+graph LR
+    A[Your Local Machine] -->|1. SSH Connection| B[Remote Server]
+    B -->|2. Local Port Forwarding| C[Service:localhost:8080]
+```
