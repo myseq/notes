@@ -24,9 +24,14 @@ graph LR
 
 ```mermaid
 graph LR
-    A[client] --> |dport:8080| A
-    A ---- B[firewall] --> |dport:22| C[ssh_server]
-    C --> |dport:8080| C
+    client[client:8080]
+    firewall[firewall]
+    ssh_svr["ssh_server:22
+             target_server:8080"]
+    
+    client --> |dport:8080| client
+    client ---- firewall --> |dport:22| ssh_svr
+    ssh_svr --> |dport:8080| ssh_svr
 
 ```
 
