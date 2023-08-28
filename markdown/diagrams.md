@@ -28,7 +28,7 @@ graph TD
         end
 
         subgraph remote[Datacenter]
-        cli_2 === |22/tcp| fw1 ==> |dport:22| sshd2
+        cli_2 === |22/tcp| fw2 ==> |dport:22| sshd2
         sshd2 -.-> |dport:9090| web2
         end
 
