@@ -17,9 +17,16 @@ graph LR
 
 ```mermaid
 graph LR
-    A[client] -- 8080/tcp --> A[client]
-    A[client] ---- B[firewall] -- 22/tcp --> C[ssh_server]
-    C -- 8080/tcp --> D[target_svr]
+    A[client] --> |dport:8080| A
+    A ---- B[firewall] --> |dport:22| C[ssh_server]
+    C --> |dport:8080| D[target_svr]
+```
+
+```mermaid
+graph LR
+    A[client] --> |dport:8080| A
+    A ---- B[firewall] --> |dport:22| C[ssh_server]
+    C --> |dport:8080| C
 
 ```
 
