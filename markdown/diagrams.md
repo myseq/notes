@@ -29,9 +29,14 @@ graph TD
     ssh_svr["ssh_server:22
              target_server:8080"]
     
+    subgraph local[Home]
     client -.-> |dport:8080| client
+    end
+    
+    subgraph remote[Datacenter]
     client === firewall ==> |dport:22| ssh_svr
     ssh_svr -.-> |dport:8080| ssh_svr
+    end
 
 ```
 
