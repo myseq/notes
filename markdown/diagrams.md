@@ -1,35 +1,13 @@
 ## Diagrams
 
 ```mermaid
-  graph LR;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
-
-```mermaid
-graph LR
-    A[Start] --> B[Process 1]
-    B --> C[Process 2]
-    C --> D[End]
-```
-
-```mermaid
-graph LR
-    A[client] --> |dport:8080| A
-    A ---- B[firewall] --> |dport:22| C[ssh_server]
-    C --> |dport:8080| D[target_svr]
-```
-
-```mermaid
 graph TD
     cli_1[client:8080]
     cli_2[client:9090]
     fw1{{firewall_1}}
     fw2{{firewall_2}}
-    sshd1["ssh_server1:22
-             target_server:8080"]
+    sshd1["  web1:22
+           web1:8080"]
     sshd2["ssh_server2:22"]
     web2["web2:9090"]
  
@@ -50,7 +28,7 @@ graph TD
         end
 
         subgraph remote[Datacenter]
-        cli_2 === |22/tcp| fw2 ==> |dport:22| sshd2
+        cli_2 === |22/tcp| fw1 ==> |dport:22| sshd2
         sshd2 -.-> |dport:9090| web2
         end
 
