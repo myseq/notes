@@ -33,3 +33,14 @@ graph LR
     A[Your Local Machine] -->|1. SSH Connection| B[Remote Server]
     B -->|2. Local Port Forwarding| C[Service:localhost:8080]
 ```
+
+## SSH Remote Port Forwarding
+
+SSH remote port forwarding allows you to access a service running on your local machine from a remote server through an encrypted SSH tunnel.
+
+```mermaid
+graph LR
+    A[Your Local Machine] -->|1. SSH Connection| B[Remote Server]
+    B -->|2. Remote Port Forwarding| C[Service:localhost:8080]
+```
+
