@@ -43,15 +43,15 @@ graph TD
         subgraph local[Home]
         * -.-> |dport:9090| cli_2
         end
-     
-        subgraph remote[Datacenter]
-        cli_2 === |22/tcp| fw2 ==> |dport:22| sshd2
-        sshd2 -.-> |dport:9090| web2
-        end
-
+             
         subgraph remote[Datacenter]
         cli_1 === |22/tcp| fw1 ==> |dport:22| sshd1
         sshd1 -.-> |dport:8080| sshd1
+        end
+
+        subgraph remote[Datacenter]
+        cli_2 === |22/tcp| fw2 ==> |dport:22| sshd2
+        sshd2 -.-> |dport:9090| web2
         end
 
       
@@ -66,6 +66,7 @@ graph TD
     class remote title2
 
     style local color:#0f0
+    
 ```
 
 
