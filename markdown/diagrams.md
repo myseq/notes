@@ -15,4 +15,10 @@ graph LR
     C --> D[End]
 ```
 
+```mermaid
+graph LR
+    A[client] -- 8080/tcp --> A[client]
+    A[client] ---- B[firewall] -- 22/tcp --> C[ssh_server]
+    C -- 8080/tcp --> D[target_svr]
 
+```
