@@ -96,18 +96,39 @@ graph BT
 SSH remote port forwarding allows a remote server to access a service running on local machine/network through an encrypted SSH tunnel.
 
 ```mermaid
-graph LR
-  my["my computer"]
+graph 
+  direction LR
+  sshd(["sshd:22
+        fport:80"])
+  client(["client"])
+  demo["web:8080"]
+  remote((remote))
 
-  subgraph main[Remote Port Forwarding]
-
+  subgraph main[Network Access: remote -> web:8080]
+         
     subgraph intra[Intranet]
-
+      client --> |8080/tcp| demo
     end
-    
 
+    subgraph cloud[Internet]
+      sshd
+      remote --> |80/tcp| sshd
+    end
+
+    client --> |22/tcp| sshd    
+    
   end
 
+  linkStyle default stroke-width:4px
+  linkStyle 0 stroke:yellow
+  linkStyle 1 stroke:yellow
+  linkStyle 2 stroke:blue
 
+  classDef Block color:#0ff
+  classDef Title color:#f66
+
+  class main Title
+  class cloud,intra Block
+  
 ```
 
