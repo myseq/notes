@@ -7,7 +7,7 @@ graph
   fw1{{fw_allow}}
   fw2{{fw_block}}
 
-  subgraph main[Firewall Requirement]
+  subgraph main[Prerequisite: Firewall Requirement]
     direction RL
  
     subgraph grant[Success: Allow incoming SSH port]
@@ -97,7 +97,17 @@ SSH remote port forwarding allows a remote server to access a service running on
 
 ```mermaid
 graph LR
-    A[Your Local Machine] -->|1. SSH Connection| B[Remote Server]
-    B -->|2. Remote Port Forwarding| C[Service:localhost:8080]
+  my["my computer"]
+
+  subgraph main[Remote Port Forwarding]
+
+    subgraph intra[Intranet]
+
+    end
+    
+
+  end
+
+
 ```
 
