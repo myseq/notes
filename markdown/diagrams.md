@@ -1,4 +1,6 @@
-## Diagrams
+## SSH Local Port Forwarding
+
+SSH local port forwarding allows you to securely access a service running on a remote server through an encrypted SSH tunnel.
 
 ```mermaid
 graph TD
@@ -41,19 +43,9 @@ graph TD
 ```
 
 
-## SSH Local Port Forwarding
-
-SSH local port forwarding allows you to securely access a service running on a remote server through an encrypted SSH tunnel.
-
-```mermaid
-graph LR
-    A[Your Local Machine] -->|1. SSH Connection| B[Remote Server]
-    B -->|2. Local Port Forwarding| C[Service:localhost:8080]
-```
-
 ## SSH Remote Port Forwarding
 
-SSH remote port forwarding allows you to access a service running on your local machine from a remote server through an encrypted SSH tunnel.
+SSH remote port forwarding allows a remote server to access a service running on local machine/network through an encrypted SSH tunnel.
 
 ```mermaid
 graph LR
