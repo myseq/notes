@@ -42,7 +42,6 @@ graph TD
     
 ```
 
-
 ## SSH Remote Port Forwarding
 
 SSH remote port forwarding allows a remote server to access a service running on local machine/network through an encrypted SSH tunnel.
