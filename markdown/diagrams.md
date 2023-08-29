@@ -8,8 +8,8 @@ graph TD
     cli_2[client:9090]
     fw1{{firewall_1}}
     fw2{{firewall_2}}
-    sshd1["  web1:22
-           web1:8080"]
+    sshd1["web1:8080
+             web1:22"]
     sshd2["ssh_server2:22"]
     web2["web2:9090"]
  
