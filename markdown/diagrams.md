@@ -3,49 +3,43 @@
 SSH local port forwarding allows you to securely access a service running on a remote server through an encrypted SSH tunnel.
 
 ```mermaid
-graph TD
-    cli_1[client:8080]
-    cli_2[client:9090]
-    fw1{{firewall_1}}
-    fw2{{firewall_2}}
-    sshd1["web1:8080
-             web1:22"]
-    sshd2["ssh_server2:22"]
-    web2["web2:9090"]
+graph 
+  fw1{{fw_allow}}
+  fw2{{fw_block}}
+
+  subgraph main[Firewall Requirement]
+    direction RL
  
-    subgraph main[Local Port Forwarding]
-      
+    subgraph grant[Success: Allow incoming SSH port]
+      direction LR
+      client1 --> |22/tcp| fw1 --> |dport:22| sshd1
+    end
 
-        subgraph local[Home]
-        cli_1 -.-> |dport:8080| cli_1
-        * -.-> |dport:9090| cli_2
-        end
-             
-        subgraph remote[Datacenter]
-        cli_1 === |22/tcp| fw1 ==> |dport:22| sshd1
-        sshd1 -.-> |dport:8080| sshd1
+    subgraph fail[FAIL: incoming SSH port is blocked]
+      direction LR
+      client2 --> |22/tcp| fw2 --> sshd2
+    end
 
-        cli_2 === |22/tcp| fw2 ==> |dport:22| sshd2
-        sshd2 -.-> |dport:9090| web2
-        end  
+  end
 
-    end 
+  linkStyle default stroke-width:4px
+  linkStyle 0 stroke:yellow
+  linkStyle 1 stroke-width:3px,stroke:green
+  linkStyle 2 stroke:yellow
+  linkStyle 3 stroke:red
 
-    classDef title font-size:20px,color:#f66
-    classDef padding stroke:none,fill:none
-    classDef title2 color:#0ff
+  classDef Allow color:#0ff
+  classDef Block color:#f00
 
-    class main title
-    class remote title2
+  class grant Allow
+  class fail Block
 
-    style local color:#0f0
-    
 ```
 
 ```mermaid
 graph BT
-  ssh_1(["ssh_svr:22
-        web1:8080"])
+  ssh_1(["web1:9090
+        ssh_svr:22"])
   fw_1{{firewall}}
   cli_1((client:8080))
   cli_2((client:9090))
