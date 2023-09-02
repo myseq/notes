@@ -3,6 +3,7 @@
 SSH local port forwarding allows you to securely access a service running on a remote server through an encrypted SSH tunnel.
 
 ```mermaid
+%%{init: {'theme': 'dark', "flowchart" : { "curve" : "basis" } } }%%
 graph 
   fw1{{fw_allow}}
   fw2{{fw_block}}
