@@ -136,5 +136,45 @@ graph
 ## SSH Dynamic Port Forwarding
 
 ```mermaid
+graph
+  client(["client:1080"])
+  local(["client:1080"])
+  sshd(["sshd:22"])
+  http(["web:80"])
+  https(["web:443"])
+  fw{{firewall}}
 
+  subgraph main[Dynamic Port Forwarding: client -> http or https]
+    direction BT
+           
+    subgraph DC[Intranet]
+      direction BT
+      fw --> |dport:22| sshd 
+      sshd --> |80/tcp| http
+      sshd --> |443/tcp| https
+    end
+
+    subgraph cloud[Remote]
+      direction BT
+      client === |22/tcp| fw
+      * --> |1080/tcp| client
+      local === |22/tcp| fw
+      local -.-> |1080/tcp| local
+    end 
+    
+  end
+
+  linkStyle default stroke-width:4px
+  linkStyle 0 stroke:blue
+  linkStyle 1 stroke:yellow
+  linkStyle 2 stroke:cyan
+  linkStyle 3,5 stroke:blue
+  linkStyle 4,6 stroke:cyan
+
+  classDef Title color:#f00
+  classDef subTitle color:#0ff
+  
+  class main Title
+  class cloud,DC subTitle
+  
 ```
